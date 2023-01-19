@@ -1,0 +1,249 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+    color: #838fa3;
+}
+
+#parrafo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    text-align: justify;
+    z-index: -1;
+    font-size: 70px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #838fa3;
+    opacity: 0.1;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ebeef7;
+}
+
+ 
+header {
+    height: 125px;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 45px;
+    color: #838fa3;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: 0.3s all;
+    cursor: default;
+}
+
+header h1:hover {
+    color: #a697ff;
+}
+
+main {
+    height: calc(100vh - 250px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.letf-bar,
+.right-bar {
+    height: 300px;
+    width: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+    background: #ebeef7;
+    box-shadow:  -20px -20px 60px #929499,
+                 20px 20px 60px #ffffff;
+}
+
+.right-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background: #ebeef7;
+    box-shadow:  20px -20px 60px #929499,
+                 -20px 20px 60px #ffffff;
+}
+
+.right-bar span {
+    position: relative;
+    width: 30px;
+    height: auto;
+    top: -90px;
+    text-align: center;
+    font-size: 20px;
+    color: #838fa3;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.right-bar input {
+    transform: rotate(-90deg);
+    color: #838fa3;
+}
+
+input[type='range'] {
+    display: block;
+    width: 150px;
+  }
+  
+  input[type='range']:focus {
+    outline: none;
+  }
+  
+  input[type='range'],
+  input[type='range']::-webkit-slider-runnable-track,
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    background-color: #838fa3;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: -9px;
+    cursor: pointer;
+    transition: 0.3s all;
+  }
+
+  input[type=range]::-webkit-slider-thumb:hover {
+    background-color: #a697ff;
+    transform: scale(1.1); 
+  }
+
+
+  input[type=range]::-webkit-slider-runnable-track {
+    background-color: #838fa3;
+    height: 3px;
+    transition: 0.3s all;
+}
+
+input[type=range]::-webkit-slider-runnable-track:hover {
+    background-color: #a697ff;
+}
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    outline: none;
+  }
+  
+ 
+
+
+button {
+    border: none;
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.btn-refresh:hover {
+    transform: rotate(360deg);
+}
+
+ion-icon {
+    font-size: 30px;
+    color: #838fa3;
+    transition: 0.3s all;
+  }
+
+ion-icon:hover {
+    transform: scale(1.2);
+    color: #a697ff;
+}
+
+.container {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: flex-start;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.144);
+    border-radius: 0px;
+    background: #fff;
+    box-shadow:  -17px 17px 49px #9d9fa5,
+                 17px -17px 49px #9d9fa5;
+    }
+
+.container > div {
+    margin: 0;
+    padding: 0;
+    height: 16px;
+    width: 16px;
+}
+
+.container > div:hover {
+    background-color: rgb(200, 173, 230);
+}
+
+footer {
+    height: 125px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #838fa3;
+}
+
+footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #ebeef7;
+    font-size: 20px;
+    background-color: #838fa3;
+    padding: 10px;
+    border-radius: 50px;
+    transition: 0.3s all;
+}
+
+footer img {
+    height: 30px;
+    width: 30px;
+}
+
+footer a:hover {
+    color: #fff;
+    background-color: #a697ff;
+}
+
+footer ion-icon {
+    color: #ebeef7;
+}
+
+footer a:hover > 
+ion-icon {
+    color: #fff;
+    transform: scale(1);
+
+}
