@@ -152,15 +152,16 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     outline: none;
 }
 
- #btn-borders {
+ .btn-borders {
     width: 30px;
     height: 30px;
-    background: url(https://img-aws.ehowcdn.com/600x375/cdn-write.demandstudios.com/upload//7000/800/00/0/217800.jpg?type=webp);
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Blank_neighborhood.svg/220px-Blank_neighborhood.svg.png);
     background-size: cover;
     background-position: center;
     border: 3px solid #838fa3;
     transform: scale(1);
     cursor: pointer;
+    transition: all 0.3s;
  }
 
  #btn-borders:hover {
@@ -168,6 +169,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     border-color: #a697ff;
  }
 
+ .border-active {
+    transform: scale(0.9);
+    border-color: #a697ff;
+    transition: all 0.3s;
+ }
 
 button {
     border: none;
@@ -203,8 +209,8 @@ ion-icon:hover {
                  17px -17px 49px #9d9fa5;
 }
 
-.container-board > div {
-    border: 1px solid #838fa314
+.container-board .borderChills {
+    border: 1px solid #838fa32d
 }
 
 /*--------------footer--------------*/
