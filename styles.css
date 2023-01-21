@@ -107,6 +107,40 @@ main {
     margin: 50px 0;
 }
 
+.container-btn-color {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all;
+}
+
+.hover-icon-btn-color {
+    transform: scale(1.1);
+    color: #a697ff;
+}
+
+.btn-color {
+    position: absolute;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border: 1px solid rebeccapurple;
+    opacity: 0.0;    
+    z-index: 1;   
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
 input[type='range'] {
     display: block;
     width: 150px;

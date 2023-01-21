@@ -7,6 +7,9 @@ const pixelIndicator = document.querySelector('.pixel-indicator');
 const btnCellSize = document.querySelector('#btn-range');
 const bntBorders = document.querySelector('.btn-borders');
 const btnRefresh = document.querySelector('.btn-refresh');
+const btnColor = document.querySelector('.btn-color');
+const iconBtnColor = document.querySelector('.icon-btn-color');
+
 
 /*Valores por defecto*/
 const COLOR_DEFAULT = '#fff';
@@ -45,7 +48,7 @@ function removeCells () {
     } 
 }
 
-
+//Refresca o borra el tablero estabeciendo las celdas al color por defecto
 function removeStyle () {
     let cells = board.querySelectorAll('div');
     let arrCells = [...cells];
@@ -83,7 +86,14 @@ btnRefresh.addEventListener('click', () => {
     removeStyle();
 });
 
+//cambiar color
+btnColor.addEventListener('mouseenter', () => {
+    iconBtnColor.classList.toggle('hover-icon-btn-color');
+});
 
+btnColor.addEventListener('mouseleave', () => {
+    iconBtnColor.classList.toggle('hover-icon-btn-color');
+});
 
 
 
