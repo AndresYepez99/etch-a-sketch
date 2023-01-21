@@ -49,9 +49,10 @@ function removeCells () {
 function removeStyle () {
     let cells = board.querySelectorAll('div');
     let arrCells = [...cells];
-    for (let i = 0; i < arrCells; i++) {
-        console.log('funciona');
-    }
+    arrCells.forEach(element => {
+        element.style.backgroundColor = COLOR_DEFAULT;
+        element.classList.add('boderChills');
+    });
 }
 
 /*Eventos para botenes*/
