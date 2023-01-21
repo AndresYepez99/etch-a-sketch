@@ -16,7 +16,7 @@ const iconBtnMagic = document.querySelector('.icon-btn-magic'); //icono de pince
 /*Valores por defecto*/
 const COLOR_DEFAULT = '#fff';
 let defaultSize = btnCellSize.value = 16;
-pixelIndicator.textContent = defaultSize;
+pixelIndicator.innerHTML = `${defaultSize}<br>px`;
 
 
 let colorChange = '#000';
@@ -62,6 +62,10 @@ function removeStyle () {
     });
 }
 
+function refreshPixels () {
+    pixelIndicator.innerHTML = `${defaultSize}<br>px`;
+}
+
 /*Eventos para botenes*/
 
 //Crear dimension y nummero de celdas 
@@ -73,6 +77,9 @@ btnCellSize.addEventListener ('input', (event) => {
     boardDimension(size);
     addCells(size);
     bntBorders.classList.add('border-active');
+    iconBtnMagic.classList.remove('hover-icon-btn-color');
+    refreshPixels();
+    changeColorCells(1);
 });
 
 //Activar borde de cada celda del tablero
@@ -127,8 +134,6 @@ function changeColorCells (option) {
 }
 
 // cambiar color de celdas 
-
-
 
 btnMagic.addEventListener('click', () => {
     iconBtnMagic.classList.add('hover-icon-btn-color');
