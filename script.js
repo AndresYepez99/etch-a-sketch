@@ -117,7 +117,7 @@ function changeColorCells (option) {
     let arrDivs = [...divs];
     if(option === 1) {
         arrDivs.forEach(element => {
-            element.addEventListener('mousemove', () => {
+            element.addEventListener('click', () => {
                 element.style.backgroundColor = colorChange;  
             })
         });
