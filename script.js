@@ -17,6 +17,8 @@ let defaultSize = btnCellSize.value = 16;
 pixelIndicator.textContent = defaultSize;
 
 
+let colorChange = '#000';
+
 
 
 //Crea las filas y columnas que tendra el tablero 
@@ -31,9 +33,9 @@ function addCells (size) {
     for (let i = 0; i < size * size; i++) {
         let newDiv = document.createElement('div');
         newDiv.classList.add('borderChills');
-        newDiv.addEventListener('click', () => {
-            newDiv.style.backgroundColor = 'red';
-        })
+        /*newDiv.addEventListener('click', () => {
+            newDiv.style.backgroundColor = colorChange;
+        })*/
         board.appendChild(newDiv);
     }
 }
@@ -86,14 +88,34 @@ btnRefresh.addEventListener('click', () => {
     removeStyle();
 });
 
-//cambiar color
+//cambiar color del icono, paleta de colores
 btnColor.addEventListener('mouseenter', () => {
     iconBtnColor.classList.toggle('hover-icon-btn-color');
 });
 
-btnColor.addEventListener('mouseleave', () => {
+btnColor.addEventListener('mouseleave', (e) => {
     iconBtnColor.classList.toggle('hover-icon-btn-color');
+    iconBtnColor.style.color = e.target.value;
+    colorChange = e.target.value;
 });
+
+
+// cambiar color de celdas llamada desde el evento de board
+function changeColorCells () {
+    let divs = board.querySelectorAll('div');
+    let arrDivs = [...divs];
+    arrDivs.forEach(element => {
+        element.addEventListener('mousemove', () => {
+            element.style.backgroundColor = colorChange;  
+        })
+    });
+}
+
+// cambiar color de celdas 
+board.addEventListener('mouseenter', () => {
+    changeColorCells();
+});
+
 
 
 
