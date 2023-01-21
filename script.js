@@ -9,6 +9,8 @@ const bntBorders = document.querySelector('.btn-borders');
 const btnRefresh = document.querySelector('.btn-refresh');
 const btnColor = document.querySelector('.btn-color');
 const iconBtnColor = document.querySelector('.icon-btn-color');
+const btnMagic = document.querySelector('.btn-magic');
+const iconBtnMagic = document.querySelector('.icon-btn-magic'); //icono de pincel magico
 
 
 /*Valores por defecto*/
@@ -91,38 +93,52 @@ btnRefresh.addEventListener('click', () => {
 //cambiar color del icono, paleta de colores
 btnColor.addEventListener('mouseenter', () => {
     iconBtnColor.classList.toggle('hover-icon-btn-color');
+    iconBtnMagic.classList.remove('hover-icon-btn-color');
 });
 
 btnColor.addEventListener('mouseleave', (e) => {
     iconBtnColor.classList.toggle('hover-icon-btn-color');
     iconBtnColor.style.color = e.target.value;
     colorChange = e.target.value;
+    changeColorCells(1);
 });
 
 
 // cambiar color de celdas llamada desde el evento de board
-function changeColorCells () {
+function changeColorCells (option) {
     let divs = board.querySelectorAll('div');
     let arrDivs = [...divs];
-    arrDivs.forEach(element => {
-        element.addEventListener('mousemove', () => {
-            element.style.backgroundColor = colorChange;  
-        })
-    });
+    if(option === 1) {
+        arrDivs.forEach(element => {
+            element.addEventListener('mousemove', () => {
+                element.style.backgroundColor = colorChange;  
+            })
+        });
+    } else if (option === 2) {
+        arrDivs.forEach(element => {
+            element.addEventListener('mousemove', () => {
+                let randomColor = Math.floor(Math.random()*16777215).toString(16);
+                element.style.backgroundColor = '#' + randomColor;  
+            })
+        });
+    }
+
+
 }
 
 // cambiar color de celdas 
-board.addEventListener('mouseenter', () => {
-    changeColorCells();
+
+
+
+btnMagic.addEventListener('click', () => {
+    iconBtnMagic.classList.add('hover-icon-btn-color');
+    changeColorCells(2);
+    
 });
 
 
 
 
-
-
-//boardDimension(3);
-//addCells(3);
 
 
 
